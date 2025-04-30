@@ -19,9 +19,9 @@ public class ProductCategory {
     @JoinColumn(name = "productId")
     private Product product;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id")
-//    private Category category;
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    private Category category;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
