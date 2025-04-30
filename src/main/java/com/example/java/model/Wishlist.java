@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 
         @ManyToOne
         @JoinColumn(name = "userId")
-        private Long user;
+        private User user;
 
         @ManyToOne
         @JoinColumn(name = "productId")
