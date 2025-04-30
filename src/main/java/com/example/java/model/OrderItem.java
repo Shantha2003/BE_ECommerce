@@ -1,7 +1,6 @@
 package com.example.java.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.Order;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
