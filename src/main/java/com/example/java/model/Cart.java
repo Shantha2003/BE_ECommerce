@@ -18,13 +18,8 @@ public class Cart {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
-    @ManyToOne
     @JoinColumn(name = "productId")
     private Product product;
-
 
     private int quantity;
     private LocalDateTime createdAt;

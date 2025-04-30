@@ -17,9 +17,6 @@ import java.time.LocalDateTime;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @ManyToOne
-        @JoinColumn(name = "userId")
-        private User user;
 
         @ManyToOne
         @JoinColumn(name = "productId")

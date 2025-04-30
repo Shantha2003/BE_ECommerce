@@ -29,7 +29,6 @@ public class OrderItem {
 
     private int quantity;
     private Double priceAtPurchase;
-
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     @ManyToOne(fetch = FetchType.LAZY)
