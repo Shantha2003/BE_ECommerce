@@ -1,7 +1,7 @@
 package com.example.java.controller;
 
-import com.example.java.model.Orders;
-import com.example.java.service.OrdersService;
+import com.example.java.model.Order;
+import com.example.java.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,21 +10,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/order")
-public class OrdersController {
+public class OrderController {
         @Autowired
-        private OrdersService ordersService;
+        private OrderService ordersService;
     @GetMapping("")
-    public List<Orders> getAllOrders() {
+    public List<Order> getAllOrders() {
         return ordersService.getAll();
     }
 
     @PostMapping("/createOrder")
-    public Orders createOrder(@RequestBody Orders order) {
+    public Order createOrder(@RequestBody Order order) {
         return ordersService.create(order);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Orders> getOrder(@PathVariable Long id) {
+    public ResponseEntity<Order> getOrder(@PathVariable Long id) {
         return ordersService.getById(id);
 
     }
