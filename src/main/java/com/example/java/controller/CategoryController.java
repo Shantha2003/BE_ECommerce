@@ -15,22 +15,27 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("")
-    public List<Category> getAllCategories() {
-        return categoryService.getAll();
+    public List<Category> getAllCategories(@RequestParam Long userId) {
+        return categoryService.getAll(userId);
     }
 
     @PostMapping("/createCategory")
-    public Category createCategory(@RequestBody Category category) {
-        return categoryService.create(category);
+    public Category createCategory(@RequestBody Category category, @RequestParam Long userId) {
+        return categoryService.create(category, userId);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Category> getCategory(@PathVariable Long id) {
-        return categoryService.getById(id);
+    public ResponseEntity<Category> getCategory(@PathVariable Long id, @RequestParam Long userId) {
+        return categoryService.getById(id, userId);
+    }
+    @PutMapping("/{id}")
+    public Category updateCategory(@PathVariable Long id, @RequestBody Category updatedCategory, @RequestParam Long userId) {
+        return categoryService.update(id, updatedCategory, userId);
     }
 
+
     @DeleteMapping("/{id}")
-    public void deleteCategory(@PathVariable Long id) {
-        categoryService.delete(id);
+    public void deleteCategory(@PathVariable Long id, @RequestParam Long userId) {
+        categoryService.delete(id, userId);
     }
 }
