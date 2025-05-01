@@ -58,7 +58,6 @@ public class CategoryService {
         return categoryRepository.save(existingCategory);
     }
 
-
     public void delete(Long id, Long userId) {
         if (!isAdmin(userId)) throw new RuntimeException("Access denied");
         categoryRepository.deleteById(id);

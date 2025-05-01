@@ -33,7 +33,6 @@ public class CategoryController {
         return categoryService.update(id, updatedCategory, userId);
     }
 
-
     @DeleteMapping("/{id}")
     public void deleteCategory(@PathVariable Long id, @RequestParam Long userId) {
         categoryService.delete(id, userId);
