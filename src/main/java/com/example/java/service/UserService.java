@@ -23,7 +23,6 @@ public class UserService {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
     public User createUser(User user) {
         return userRepository.save(user);
     }

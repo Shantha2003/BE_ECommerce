@@ -1,5 +1,4 @@
 package com.example.java.controller;
-
 import com.example.java.JwtUtil;
 import com.example.java.model.AuthRequest;
 import com.example.java.model.AuthResponse;
