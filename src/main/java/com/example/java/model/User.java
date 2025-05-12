@@ -2,7 +2,6 @@ package com.example.java.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 @Data
 @Entity
 public class User {

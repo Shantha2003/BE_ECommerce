@@ -44,7 +44,6 @@ public class JwtFilter extends OncePerRequestFilter {
                     logger.error("Invalid JWT token format or expired", e);
                 }
             }
-
             //  Prevent repeated loading
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 // Load once
