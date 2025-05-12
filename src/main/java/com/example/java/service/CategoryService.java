@@ -10,19 +10,22 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 @Service
 public class CategoryService {
+
     @Autowired
     private CategoryRepository categoryRepository;
-
 
     @Autowired
     private UserRepository userRepository;
 
     private boolean isAdmin(Long userId) {
         User user = userRepository.findById(userId).orElse(null);
-        return user != null && "ADMIN".equalsIgnoreCase(user.getRole());
+        // Check if the role is "admin" (case-insensitive comparison)
+        return user != null && "admin".equalsIgnoreCase(user.getRole());
     }
+
     public List<Category> getAll(Long userId) {
         if (!isAdmin(userId)) throw new RuntimeException("Access denied");
         return categoryRepository.findAll();
@@ -42,6 +45,7 @@ public class CategoryService {
         category.setCreatedAt(LocalDateTime.now());
         return categoryRepository.save(category);
     }
+
     public Category update(Long id, Category updatedCategory, Long userId) {
         if (!isAdmin(userId)) throw new RuntimeException("Access denied");
 
@@ -63,4 +67,3 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 }
-
