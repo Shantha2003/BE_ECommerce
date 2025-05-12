@@ -1,5 +1,4 @@
 package com.example.java;
-
 import com.example.java.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

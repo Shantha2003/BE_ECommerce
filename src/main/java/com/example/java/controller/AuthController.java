@@ -45,7 +45,6 @@ public class AuthController {
                 .findFirst()
                 .map(auth -> auth.getAuthority())
                 .orElse("ROLE_USER"); // Default role if none found
-
         final String jwt = jwtUtil.generateToken(userDetails.getUsername(), role);
         // Return the JWT token as a response
         return ResponseEntity.ok(new AuthResponse(jwt));

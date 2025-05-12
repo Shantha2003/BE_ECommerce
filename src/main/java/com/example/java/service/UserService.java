@@ -1,13 +1,11 @@
 package com.example.java.service;
-
 import com.example.java.model.User;
 import com.example.java.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class UserService {

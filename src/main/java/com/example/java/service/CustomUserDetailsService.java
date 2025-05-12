@@ -1,5 +1,4 @@
 package com.example.java.service;
-
 import com.example.java.CustomUserDetails;
 import com.example.java.model.User;
 import com.example.java.repository.UserRepository;
